@@ -11,23 +11,21 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import { userReducer } from './auth/auth-slice';
+import { usersReducer } from './users/usersSlice';
+import { toFormData } from 'axios';
 
-const phonebookPersistConfig = {
-  key: 'item',
-  storage: storage,
-  whitelist: ['filter'],
-};
+// const phonebookPersistConfig = {
+//   key: 'userData',
+//   storage: storage,
+//   whitelist: ['token'],
+// };
 
-const phonebookPersistReducer = persistReducer(
-  phonebookPersistConfig,
-  contactsReducer
-);
+// const authPersistReducer = persistReducer(phonebookPersistConfig, usersReducer);
 
 const store = configureStore({
   reducer: {
-    contactsData: phonebookPersistReducer,
-    userData: userReducer,
+    contactsData: contactsReducer,
+    userData: usersReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

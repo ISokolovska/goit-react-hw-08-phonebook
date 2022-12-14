@@ -1,31 +1,26 @@
 import React, { lazy, Suspense, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router';
-import { fetchContacts } from 'redux/contacts/operations';
-import { getError, getIsLoading } from 'redux/selectors';
-import { getIsLoggedIn } from '../redux/auth/auth-selectors';
-import { ContactsForm } from './ContactsForm/ContactsForm';
-import { ContactsList } from './ContactsList/ContactsList';
-import { Filter } from './Filter/Filter';
-import { TitleContacts } from './Styled';
-// import { NavLink } from 'react-router-dom';
 import { Navigation } from './Navigation';
 import { UserMenu } from './UserMenu/UserMenu';
 import { AuthNav } from './AuthNav';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAuth } from 'redux/users/operations';
+import { getToken, getUser } from 'redux/selectors';
 
 const LazyHomePage = lazy(() => import('../pages/HomePage'));
+const LazyContactsPage = lazy(() => import('../pages/ContactsPage'));
 const LazySignUpPage = lazy(() => import('../pages/SignUpPage'));
-const LazyLoginPage = lazy(() => import('../pages/LoginPage'));
+const LazySignInPage = lazy(() => import('../pages/SignInPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector(getIsLoading);
-  const error = useSelector(getError);
-  // const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-
+  const user = useSelector(getUser);
+  const isLoggedIn = user?.email ?? null;
   useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+    if (!localStorage.getItem('token')) return;
+
+    dispatch(getAuth());
+  }, []);
 
   return (
     <div
@@ -45,26 +40,18 @@ export const App = () => {
       <header>
         <nav>
           <Navigation />
-          <UserMenu />
-          <AuthNav />
+          {!isLoggedIn ? <AuthNav /> : <UserMenu />}
         </nav>
-
-        {/* {isLoggedIn ? <UserMenu /> : <AuthNav />} */}
       </header>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          {/* <Route path="/" element={<LazyHomePage />} /> */}
-          <Route path="/register" element={<LazySignUpPage />} />
-          {/* <Route path="/login" element={<LazyLoginPage />} /> */}
-          {/* <Route path="*" element={<LazyHomePage />} /> */}
+          <Route path="/" element={<LazyHomePage />} />
+          <Route path="/contacts" element={<LazyContactsPage />} />
+          <Route path="/sign-up" element={<LazySignUpPage />} />
+          <Route path="/sign-in" element={<LazySignInPage />} />
+          <Route path="*" element={<LazyHomePage />} />
         </Routes>
       </Suspense>
-      {/* <h1>Phonebook</h1> */}
-      {/* <ContactsForm /> */}
-      {isLoading && !error && <b>Request in progress...</b>}
-      {/* <TitleContacts>Contacts</TitleContacts>
-      <Filter />
-      <ContactsList /> */}
     </div>
   );
 };

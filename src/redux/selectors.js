@@ -2,3 +2,8 @@ export const getContacts = state => state.contactsData.contacts.items;
 export const getIsLoading = state => state.contactsData.contacts.isLoading;
 export const getError = state => state.contactsData.contacts.error;
 export const getFilter = state => state.contactsData.filter;
+export const getUser = state => state.userData.user;
+export const getUserName = state => state.userData.user.name;
+export const getToken = state => state.userData.token;
+export const getErrorUser = state => state.userData.error;
+export const getIsLoadingUser = state => state.userData.isLoading;

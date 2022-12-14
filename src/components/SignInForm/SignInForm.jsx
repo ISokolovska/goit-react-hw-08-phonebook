@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { signUp } from 'redux/users/operations';
-import PropTypes from 'prop-types';
-import { FormSignUp } from './Styled';
 
-function SignUpForm({ isLoading }) {
+import PropTypes from 'prop-types';
+import { signIn } from 'redux/users/operations';
+
+function SignInForm({ isLoading }) {
   const [formData, setFormData] = useState({
-    name: '',
     email: '',
     password: '',
   });
@@ -20,18 +19,16 @@ function SignUpForm({ isLoading }) {
   const handleSubmit = e => {
     e.preventDefault();
     const finalData = {
-      name: formData.name,
       email: formData.email,
       password: formData.password,
     };
     console.log(finalData);
-    dispatch(signUp(finalData));
+    dispatch(signIn(finalData));
     reset();
   };
 
   const reset = () => {
     setFormData({
-      name: '',
       email: '',
       password: '',
     });
@@ -39,18 +36,8 @@ function SignUpForm({ isLoading }) {
 
   return (
     <div>
-      <h1>Registration page </h1>
-      <FormSignUp onSubmit={handleSubmit} autoComplete="off">
-        <label>
-          <span>Name:</span>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          ></input>
-        </label>
+      <h1>Authorization page </h1>
+      <form onSubmit={handleSubmit} autoComplete="off">
         <label>
           <span>Email:</span>
           <input
@@ -72,18 +59,17 @@ function SignUpForm({ isLoading }) {
           ></input>
         </label>
         <button type="submit" disabled={isLoading}>
-          Sign Up
+          Sign In
         </button>
-      </FormSignUp>
+      </form>
     </div>
   );
 }
 
-export default SignUpForm;
+export default SignInForm;
 
-SignUpForm.propTypes = {
+SignInForm.propTypes = {
   user: PropTypes.shape({
-    name: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
     password: PropTypes.string.isRequired,
   }),

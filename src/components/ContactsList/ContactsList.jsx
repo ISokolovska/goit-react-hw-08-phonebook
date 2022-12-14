@@ -24,7 +24,7 @@ const ContactsList = () => {
         return (
           <ContactsItem key={contact.id}>
             <Contact>
-              {contact.name}: {contact.phone}
+              {contact.name}: {contact.number}
             </Contact>
             <Button
               type="submit"
@@ -46,7 +46,7 @@ ContactsList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      phone: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
     })
   ),
 };

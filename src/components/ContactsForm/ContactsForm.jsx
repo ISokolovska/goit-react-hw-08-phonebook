@@ -14,7 +14,7 @@ import {
 
 const ContactsForm = () => {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
 
@@ -22,8 +22,8 @@ const ContactsForm = () => {
     if (evt.target.name === 'name') {
       setName(evt.target.value);
     }
-    if (evt.target.name === 'phone') {
-      setPhone(evt.target.value);
+    if (evt.target.name === 'number') {
+      setNumber(evt.target.value);
     }
   };
 
@@ -31,7 +31,7 @@ const ContactsForm = () => {
     evt.preventDefault();
     const contact = {
       name,
-      phone,
+      number,
     };
     if (
       contacts.filter(
@@ -46,7 +46,7 @@ const ContactsForm = () => {
 
   const reset = () => {
     setName('');
-    setPhone('');
+    setNumber('');
   };
 
   return (
@@ -62,14 +62,14 @@ const ContactsForm = () => {
         required
       />
 
-      <Formlabel htmlFor="phone">Phone</Formlabel>
+      <Formlabel htmlFor="number">number</Formlabel>
       <AddContactsInput
         type="tel"
-        name="phone"
-        value={phone}
+        name="number"
+        value={number}
         onChange={handleChange}
         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-        title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+        title="number number must be digits and can contain spaces, dashes, parentheses and can start with +"
         required
       />
       <Button type="submit">
@@ -85,7 +85,7 @@ ContactsForm.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
-      phone: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
     })
   ),
   handleSubmit: PropTypes.func,
