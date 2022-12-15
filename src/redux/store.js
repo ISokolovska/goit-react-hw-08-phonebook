@@ -1,9 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import storage from 'redux-persist/lib/storage';
 import { contactsReducer } from './contacts/contactsSlice';
 import {
   persistStore,
-  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -12,7 +10,6 @@ import {
   REGISTER,
 } from 'redux-persist';
 import { usersReducer } from './users/usersSlice';
-import { toFormData } from 'axios';
 
 // const phonebookPersistConfig = {
 //   key: 'userData',

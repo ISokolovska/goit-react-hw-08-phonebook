@@ -1,11 +1,13 @@
 import React, { lazy, Suspense, useEffect } from 'react';
+import { Container } from '@chakra-ui/react';
 import { Route, Routes } from 'react-router';
-import { Navigation } from './Navigation';
+import { Navigation } from './Navigation/Navigation';
 import { UserMenu } from './UserMenu/UserMenu';
-import { AuthNav } from './AuthNav';
+import { AuthNav } from './AuthNav/AuthNav';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAuth } from 'redux/users/operations';
-import { getToken, getUser } from 'redux/selectors';
+import { getUser } from 'redux/selectors';
+import { HeaderNav } from './Styled';
 
 const LazyHomePage = lazy(() => import('../pages/HomePage'));
 const LazyContactsPage = lazy(() => import('../pages/ContactsPage'));
@@ -20,28 +22,23 @@ export const App = () => {
     if (!localStorage.getItem('token')) return;
 
     dispatch(getAuth());
+    // eslint-disable-next-line
   }, []);
 
   return (
-    <div
-    // style={{
-    //   margin: '0 auto',
-    //   display: 'flex',
-    //   flexDirection: 'column',
-    //   justifyContent: 'center',
-    //   alignItems: 'center',
-    //   fontSize: 40,
-    //   color: 'black',
-    //   backgroundColor: '#896e69',
-    //   border: '5px solid #003b46',
-    //   borderRadius: 50,
-    // }}
-    >
+    <div>
       <header>
-        <nav>
-          <Navigation />
-          {!isLoggedIn ? <AuthNav /> : <UserMenu />}
-        </nav>
+        <Container
+          w="100%"
+          maxWidth="1470px"
+          m="0 auto"
+          bgGradient="linear(to-r, #e2e8e4, #006c84, #6eb5c0)"
+        >
+          <HeaderNav>
+            <Navigation />
+            {!isLoggedIn ? <AuthNav /> : <UserMenu />}
+          </HeaderNav>
+        </Container>
       </header>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>

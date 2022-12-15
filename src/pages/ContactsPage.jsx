@@ -1,4 +1,5 @@
 import { ContactsForm, ContactsList, Filter } from 'components';
+import WithAuthRedirect from 'components/HOK/WithAuthRedirect';
 import { TitleContacts } from 'components/Styled';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,4 +26,5 @@ function ContactsPage() {
     </div>
   );
 }
-export default ContactsPage;
+// export default ContactsPage;
+export default WithAuthRedirect(ContactsPage, '/sign-in');

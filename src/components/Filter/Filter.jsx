@@ -1,8 +1,9 @@
+import { Input } from '@chakra-ui/react';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterContact } from 'redux/contacts/contactsSlice';
 import { getFilter } from 'redux/selectors';
-import { FilterContacts, FilterText } from './Styled';
+import { FilterText } from './Styled';
 
 const Filter = () => {
   const filter = useSelector(getFilter);
@@ -16,7 +17,7 @@ const Filter = () => {
   return (
     <label htmlFor="filter">
       <FilterText>Find contacts by name</FilterText>
-      <FilterContacts
+      <Input
         type="text"
         id="filter"
         value={filter}
