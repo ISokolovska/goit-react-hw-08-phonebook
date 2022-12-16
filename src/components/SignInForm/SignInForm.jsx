@@ -2,14 +2,25 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { signIn } from 'redux/users/operations';
-import { Button, FormLabel, Input } from '@chakra-ui/react';
+import {
+  Button,
+  FormLabel,
+  Icon,
+  Input,
+  InputGroup,
+  InputRightElement,
+} from '@chakra-ui/react';
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 
 function SignInForm({ isLoading }) {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
+  const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
+
+  const handlePasswordVisibility = () => setShowPassword(!showPassword);
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -52,19 +63,31 @@ function SignInForm({ isLoading }) {
           required
         ></Input>
         <FormLabel color="light">Password:</FormLabel>
-        <Input
-          mt="10px"
-          variant="outline"
-          placeholder="Password"
-          bg="light"
-          size="md"
-          width="300px"
-          type="text"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-        ></Input>
+        <InputGroup>
+          <Input
+            mt="10px"
+            variant="outline"
+            bg="light"
+            size="md"
+            width="300px"
+            type={showPassword ? 'text' : 'password'}
+            min={7}
+            placeholder="********"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          ></Input>
+          <InputRightElement width="3rem">
+            <Button h="1.5rem" size="sm" onClick={handlePasswordVisibility}>
+              {showPassword ? (
+                <Icon as={ViewIcon} />
+              ) : (
+                <Icon as={ViewOffIcon} />
+              )}
+            </Button>
+          </InputRightElement>
+        </InputGroup>
 
         <Button
           mt="10px"
