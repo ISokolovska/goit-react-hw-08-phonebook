@@ -37,7 +37,7 @@ export const App = () => {
       </header>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/" element={<LazyHomePage />} />
+          <Route path="" element={<LazyHomePage />} />
           <Route path="contacts" element={<LazyContactsPage />} />
           <Route path="sign-up" element={<LazySignUpPage />} />
           <Route path="sign-in" element={<LazySignInPage />} />
