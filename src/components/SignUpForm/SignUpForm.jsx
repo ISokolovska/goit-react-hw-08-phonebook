@@ -2,14 +2,26 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { signUp } from 'redux/users/operations';
 import PropTypes from 'prop-types';
-import { FormControl, FormLabel, Input, Button } from '@chakra-ui/react';
+import {
+  FormControl,
+  FormLabel,
+  Input,
+  Button,
+  InputGroup,
+  Icon,
+  InputRightElement,
+} from '@chakra-ui/react';
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 function SignUpForm({ isLoading }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
   });
+  const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
+
+  const handlePasswordVisibility = () => setShowPassword(!showPassword);
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -69,19 +81,32 @@ function SignUpForm({ isLoading }) {
             required
           ></Input>
           <FormLabel color="light">Password:</FormLabel>
-          <Input
-            mt="10px"
-            variant="outline"
-            placeholder="Number"
-            bg="light"
-            size="md"
-            width="300px"
-            type="text"
-            name="Password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          ></Input>
+          <InputGroup>
+            <Input
+              mt="10px"
+              variant="outline"
+              bg="light"
+              size="md"
+              width="300px"
+              type={showPassword ? 'text' : 'password'}
+              min={7}
+              placeholder="********"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+            <InputRightElement width="3rem">
+              <Button h="1.5rem" size="sm" onClick={handlePasswordVisibility}>
+                {showPassword ? (
+                  <Icon as={ViewIcon} />
+                ) : (
+                  <Icon as={ViewOffIcon} />
+                )}
+              </Button>
+            </InputRightElement>
+          </InputGroup>
+
           <Button
             mt="10px"
             variant="solid"

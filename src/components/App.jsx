@@ -38,9 +38,9 @@ export const App = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<LazyHomePage />} />
-          <Route path="/contacts" element={<LazyContactsPage />} />
-          <Route path="/sign-up" element={<LazySignUpPage />} />
-          <Route path="/sign-in" element={<LazySignInPage />} />
+          <Route path="contacts" element={<LazyContactsPage />} />
+          <Route path="sign-up" element={<LazySignUpPage />} />
+          <Route path="sign-in" element={<LazySignInPage />} />
           <Route path="*" element={<LazyHomePage />} />
         </Routes>
       </Suspense>
