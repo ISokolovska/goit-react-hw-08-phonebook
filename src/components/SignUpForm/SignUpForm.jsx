@@ -2,16 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { signUp } from 'redux/users/operations';
 import PropTypes from 'prop-types';
-import {
-  FormControl,
-  FormLabel,
-  Input,
-  Button,
-  InputGroup,
-  Icon,
-  InputRightElement,
-} from '@chakra-ui/react';
-import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+import { FormControl, FormLabel, Input, Button } from '@chakra-ui/react';
+
 function SignUpForm({ isLoading }) {
   const [formData, setFormData] = useState({
     name: '',
@@ -20,8 +12,6 @@ function SignUpForm({ isLoading }) {
   });
   const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
-
-  const handlePasswordVisibility = () => setShowPassword(!showPassword);
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -81,31 +71,21 @@ function SignUpForm({ isLoading }) {
             required
           ></Input>
           <FormLabel color="light">Password:</FormLabel>
-          <InputGroup>
-            <Input
-              mt="10px"
-              variant="outline"
-              bg="light"
-              size="md"
-              width="300px"
-              type={showPassword ? 'text' : 'password'}
-              min={7}
-              placeholder="********"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
-            <InputRightElement width="3rem">
-              <Button h="1.5rem" size="sm" onClick={handlePasswordVisibility}>
-                {showPassword ? (
-                  <Icon as={ViewIcon} />
-                ) : (
-                  <Icon as={ViewOffIcon} />
-                )}
-              </Button>
-            </InputRightElement>
-          </InputGroup>
+
+          <Input
+            mt="10px"
+            variant="outline"
+            bg="light"
+            size="md"
+            width="300px"
+            type={showPassword ? 'text' : 'password'}
+            min={7}
+            placeholder="********"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
 
           <Button
             mt="10px"

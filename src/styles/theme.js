@@ -11,6 +11,18 @@ export const theme = extendTheme({
     dark: '#284775',
     darkBrown: '#96711B',
   },
+  styles: {
+    global: {
+      // 'html, body': {
+      //   color: 'gray.600',
+      //   lineHeight: 'tall',
+      // },
+      a: {
+        color: 'dark',
+      },
+      
+    },
+  },
 });
 
 export const HeaderNav = styled.nav`
