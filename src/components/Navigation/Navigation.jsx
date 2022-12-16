@@ -1,13 +1,5 @@
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  Tabs,
-  useColorModeValue,
-} from '@chakra-ui/react';
-import { useState } from 'react';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import { NavLinkPage, NavLinkWrapper } from 'styles/theme';
 
 export const Navigation = () => {
   return (
