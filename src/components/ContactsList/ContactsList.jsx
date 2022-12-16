@@ -2,8 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
 import { getContacts, getFilter } from 'redux/selectors';
 import PropTypes from 'prop-types';
-import { Button } from '../ContactsForm/Styled';
-import { Contact, ContactsItem, ContactsWrapper } from './Styled';
+import { Box, Button, List, ListItem, Text } from '@chakra-ui/react';
 
 const ContactsList = () => {
   const contacts = useSelector(getContacts);
@@ -19,23 +18,43 @@ const ContactsList = () => {
   const filteredContacts = onFilterContacts();
 
   return (
-    <ContactsWrapper className="contacts-list">
-      {filteredContacts.map(contact => {
-        return (
-          <ContactsItem key={contact.id}>
-            <Contact>
-              {contact.name}: {contact.number}
-            </Contact>
-            <Button
-              type="submit"
-              onClick={() => dispatch(deleteContact(contact.id))}
+    <Box display="flex" flexDirection="column" justifyContent="center">
+      <List
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        className="contacts-list"
+      >
+        {filteredContacts.map(contact => {
+          return (
+            <ListItem
+              display="flex;"
+              justifyContent="center"
+              alignItems="center"
+              mb="10px"
+              key={contact.id}
             >
-              Delete
-            </Button>
-          </ContactsItem>
-        );
-      })}
-    </ContactsWrapper>
+              <Text fontSize="20px" color="light">
+                {contact.name}: {contact.number}
+              </Text>
+              <Button
+                variant="solid"
+                bg="primary"
+                _active={{ background: 'hoverBtn' }}
+                _hover={{ background: 'hoverBtn' }}
+                color="dark"
+                size="md"
+                w="100px"
+                type="submit"
+                onClick={() => dispatch(deleteContact(contact.id))}
+              >
+                Delete
+              </Button>
+            </ListItem>
+          );
+        })}
+      </List>
+    </Box>
   );
 };
 

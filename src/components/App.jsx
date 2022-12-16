@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useEffect } from 'react';
-import { Container } from '@chakra-ui/react';
+import { Box, Container } from '@chakra-ui/react';
 import { Route, Routes } from 'react-router';
 import { Navigation } from './Navigation/Navigation';
 import { UserMenu } from './UserMenu/UserMenu';
@@ -7,7 +7,7 @@ import { AuthNav } from './AuthNav/AuthNav';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAuth } from 'redux/users/operations';
 import { getUser } from 'redux/selectors';
-import { HeaderNav } from './Styled';
+import { HeaderNav } from '../styles/theme';
 
 const LazyHomePage = lazy(() => import('../pages/HomePage'));
 const LazyContactsPage = lazy(() => import('../pages/ContactsPage'));
@@ -26,14 +26,9 @@ export const App = () => {
   }, []);
 
   return (
-    <div>
+    <Box bg="dark">
       <header>
-        <Container
-          w="100%"
-          maxWidth="1470px"
-          m="0 auto"
-          bgGradient="linear(to-r, #e2e8e4, #006c84, #6eb5c0)"
-        >
+        <Container w="100%" minWidth="1470px" m="0 auto" bg="light">
           <HeaderNav>
             <Navigation />
             {!isLoggedIn ? <AuthNav /> : <UserMenu />}
@@ -49,6 +44,6 @@ export const App = () => {
           <Route path="*" element={<LazyHomePage />} />
         </Routes>
       </Suspense>
-    </div>
+    </Box>
   );
 };

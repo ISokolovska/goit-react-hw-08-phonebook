@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { getContacts } from 'redux/selectors';
 import PropTypes from 'prop-types';
-import { Input } from '@chakra-ui/react';
-import { AddContactsFormContainer, Formlabel, Button } from './Styled';
+import { Button, FormControl, FormLabel, Input } from '@chakra-ui/react';
 
 const ContactsForm = () => {
   const [name, setName] = useState('');
@@ -45,33 +44,57 @@ const ContactsForm = () => {
   };
 
   return (
-    <AddContactsFormContainer onSubmit={handleSubmit}>
-      <Formlabel>Name</Formlabel>
-      <Input
-        type="text"
-        name="name"
-        onChange={handleChange}
-        value={name}
-        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-        required
-        size="md"
-        w="400px"
-      />
-
-      <Formlabel htmlFor="number">number</Formlabel>
-      <Input
-        type="tel"
-        name="number"
-        value={number}
-        onChange={handleChange}
-        pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-        title="number number must be digits and can contain spaces, dashes, parentheses and can start with +"
-        required
-        size="md"
-      />
-      <Button type="submit">Add</Button>
-    </AddContactsFormContainer>
+    <form onSubmit={handleSubmit}>
+      <FormControl>
+        <FormLabel color="light">Name</FormLabel>
+        <Input
+          mt="10px"
+          variant="outline"
+          placeholder="Name"
+          bg="light"
+          size="md"
+          width="300px"
+          type="text"
+          name="name"
+          onChange={handleChange}
+          value={name}
+          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          required
+        />
+        <FormLabel display="flex" flexDirection="column" color="light">
+          Number
+        </FormLabel>
+        <Input
+          mt="10px"
+          variant="outline"
+          placeholder="Number"
+          bg="light"
+          size="md"
+          width="300px"
+          type="tel"
+          name="number"
+          value={number}
+          onChange={handleChange}
+          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+          title="number number must be digits and can contain spaces, dashes, parentheses and can start with +"
+          required
+        />
+        <Button
+          mt="10px"
+          variant="solid"
+          bg="primary"
+          _active={{ background: 'hoverBtn' }}
+          _hover={{ background: 'hoverBtn' }}
+          color="dark"
+          size="md"
+          w="100px"
+          type="submit"
+        >
+          Add
+        </Button>
+      </FormControl>
+    </form>
   );
 };
 

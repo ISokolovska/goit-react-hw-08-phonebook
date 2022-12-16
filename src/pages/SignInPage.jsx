@@ -1,8 +1,8 @@
-import { SignInForm } from 'components';
 import React from 'react';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
+import { SignInForm } from 'components';
 
 function SignInPage() {
   const { isLoading, error, user } = useSelector(state => state.userData);
@@ -16,10 +16,9 @@ function SignInPage() {
 
   return (
     <div>
-      <h1>Sign In</h1>
+      <h1>Please, log in !</h1>
       {error.length > 0 && <p>Some error occured... With message {error}</p>}
       <SignInForm isLoading={isLoading} />
-      {/* <pre>{JSON.stringify(user, null, 2)}</pre> */}
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-
 import PropTypes from 'prop-types';
 import { signIn } from 'redux/users/operations';
+import { Button, FormLabel, Input } from '@chakra-ui/react';
 
 function SignInForm({ isLoading }) {
   const [formData, setFormData] = useState({
@@ -36,31 +36,50 @@ function SignInForm({ isLoading }) {
 
   return (
     <div>
-      <h1>Authorization page </h1>
       <form onSubmit={handleSubmit} autoComplete="off">
-        <label>
-          <span>Email:</span>
-          <input
-            type="text"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          ></input>
-        </label>
-        <label>
-          <span>Password:</span>
-          <input
-            type="text"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          ></input>
-        </label>
-        <button type="submit" disabled={isLoading}>
+        <FormLabel color="light">Email:</FormLabel>
+        <Input
+          mt="10px"
+          variant="outline"
+          placeholder="Email"
+          bg="light"
+          size="md"
+          width="300px"
+          type="text"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        ></Input>
+        <FormLabel color="light">Password:</FormLabel>
+        <Input
+          mt="10px"
+          variant="outline"
+          placeholder="Password"
+          bg="light"
+          size="md"
+          width="300px"
+          type="text"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+          required
+        ></Input>
+
+        <Button
+          mt="10px"
+          variant="solid"
+          bg="primary"
+          _active={{ background: 'hoverBtn' }}
+          _hover={{ background: 'hoverBtn' }}
+          color="dark"
+          size="md"
+          w="100px"
+          type="submit"
+          disabled={isLoading}
+        >
           Sign In
-        </button>
+        </Button>
       </form>
     </div>
   );

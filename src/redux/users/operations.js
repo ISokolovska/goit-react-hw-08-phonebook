@@ -39,7 +39,7 @@ export const signIn = createAsyncThunk(
 export const getAuth = createAsyncThunk('user/getAuth', async (_, thunkAPI) => {
   try {
     const userData = await getAuthRequest();
-    console.log(userData);
+
     return userData;
   } catch (error) {
     return thunkAPI.rejectWithValue(error);

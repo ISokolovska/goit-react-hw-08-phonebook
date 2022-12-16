@@ -1,10 +1,17 @@
+import { extendTheme } from '@chakra-ui/react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const TitleContacts = styled.h2`
-  /* margin-bottom: 30px;
-  margin-top: 50px; */
-`;
+export const theme = extendTheme({
+  colors: {
+    primary: '#FFDC83',
+    secondary: '#25502A',
+    hoverBtn: '#D0A54F',
+    light: '#F8FFF8',
+    dark: '#284775',
+    darkBrown: '#96711B',
+  },
+});
 
 export const HeaderNav = styled.nav`
   display: flex;
@@ -26,18 +33,18 @@ export const NavLinkAuth = styled(NavLink)`
   }
 `;
 
-export const NavLinkWrapper = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-`;
+// export const NavLinkWrapper = styled.div`
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+//   list-style: none;
+// `;
 
-export const NavLinkPage = styled(NavLink)`
-  &:not(:last-child) {
-    margin-right: 25px;
-  }
-`;
+// export const NavLinkPage = styled(NavLink)`
+//   &:not(:last-child) {
+//     margin-right: 25px;
+//   }
+// `;
 
 export const UserMenuWrapper = styled.div`
   display: flex;
