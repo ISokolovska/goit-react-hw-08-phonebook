@@ -5,6 +5,7 @@ import { addContact } from 'redux/contacts/operations';
 import { getContacts } from 'redux/selectors';
 import PropTypes from 'prop-types';
 import { Button, FormControl, FormLabel, Input } from '@chakra-ui/react';
+import { AddIcon } from '@chakra-ui/icons';
 
 const ContactsForm = () => {
   const [name, setName] = useState('');
@@ -82,16 +83,12 @@ const ContactsForm = () => {
         />
         <Button
           mt="10px"
-          variant="solid"
-          bg="primary"
+          variant="primary"
           _active={{ background: 'hoverBtn' }}
           _hover={{ background: 'hoverBtn' }}
-          color="dark"
-          size="md"
-          w="100px"
           type="submit"
         >
-          Add
+          <AddIcon boxSize={6} />
         </Button>
       </FormControl>
     </form>

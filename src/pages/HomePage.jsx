@@ -1,12 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Text } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 
 function HomePage() {
   const { isLoading, error } = useSelector(state => state.userData);
 
   return (
-    <div>
+    <Box h="100vh" bg="darkBlue">
       {!isLoading && (
         <Text
           mt="150px"
@@ -20,7 +20,7 @@ function HomePage() {
         </Text>
       )}
       {error.length > 0 && <p>Some error occured... With message {error}</p>}
-    </div>
+    </Box>
   );
 }
 

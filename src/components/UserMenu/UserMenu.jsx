@@ -28,13 +28,9 @@ export const UserMenu = () => {
       </UserMenuItem>
       <UserMenuItem>
         <Button
-          variant="solid"
-          bg="primary"
+          variant="primary"
           _active={{ background: 'hoverBtn' }}
           _hover={{ background: 'hoverBtn' }}
-          color="dark"
-          size="md"
-          w="100px"
           onClick={onLogOut}
         >
           Log Out

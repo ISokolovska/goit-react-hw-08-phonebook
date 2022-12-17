@@ -3,6 +3,7 @@ import { deleteContact } from 'redux/contacts/operations';
 import { getContacts, getFilter } from 'redux/selectors';
 import PropTypes from 'prop-types';
 import { Box, Button, List, ListItem, Text } from '@chakra-ui/react';
+import { DeleteIcon } from '@chakra-ui/icons';
 
 const ContactsList = () => {
   const contacts = useSelector(getContacts);
@@ -38,17 +39,13 @@ const ContactsList = () => {
                 {contact.name}: {contact.number}
               </Text>
               <Button
-                variant="solid"
-                bg="primary"
+                variant="primary"
                 _active={{ background: 'hoverBtn' }}
                 _hover={{ background: 'hoverBtn' }}
-                color="dark"
-                size="md"
-                w="100px"
                 type="submit"
                 onClick={() => dispatch(deleteContact(contact.id))}
               >
-                Delete
+                <DeleteIcon boxSize={6} />
               </Button>
             </ListItem>
           );

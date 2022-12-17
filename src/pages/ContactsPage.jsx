@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react';
 import { ContactsForm, ContactsList, Filter } from 'components';
 import WithAuthRedirect from 'components/HOK/WithAuthRedirect';
 
@@ -16,12 +17,12 @@ function ContactsPage() {
   }, [dispatch]);
 
   return (
-    <div>
+    <Box h="100vh" bg="darkBlue" w="100%" maxW="1200px" m="0 auto">
       <ContactsForm />
       {isLoading && !error && <b>Request in progress...</b>}
       <Filter />
       <ContactsList />
-    </div>
+    </Box>
   );
 }
 

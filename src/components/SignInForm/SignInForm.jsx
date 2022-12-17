@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { signIn } from 'redux/users/operations';
 import { Button, FormLabel, Input } from '@chakra-ui/react';
-
 function SignInForm({ isLoading }) {
   const [formData, setFormData] = useState({
     email: '',
@@ -36,55 +35,45 @@ function SignInForm({ isLoading }) {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} autoComplete="off">
-        <FormLabel color="light">Email:</FormLabel>
-        <Input
-          mt="10px"
-          variant="outline"
-          placeholder="Email"
-          bg="light"
-          size="md"
-          width="300px"
-          type="text"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        ></Input>
-        <FormLabel color="light">Password:</FormLabel>
+    <form onSubmit={handleSubmit} autoComplete="off">
+      <FormLabel color="light">Email:</FormLabel>
+      <Input
+        mt="10px"
+        variant="primary"
+        width="300px"
+        placeholder="Email"
+        type="text"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+        required
+      ></Input>
+      <FormLabel color="light">Password:</FormLabel>
 
-        <Input
-          mt="10px"
-          variant="outline"
-          bg="light"
-          size="md"
-          width="300px"
-          type={showPassword ? 'text' : 'password'}
-          min={7}
-          placeholder="********"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-        ></Input>
+      <Input
+        mt="10px"
+        variant="primary"
+        width="300px"
+        type={showPassword ? 'text' : 'password'}
+        min={7}
+        placeholder="********"
+        name="password"
+        value={formData.password}
+        onChange={handleChange}
+        required
+      ></Input>
 
-        <Button
-          mt="10px"
-          variant="solid"
-          bg="primary"
-          _active={{ background: 'hoverBtn' }}
-          _hover={{ background: 'hoverBtn' }}
-          color="dark"
-          size="md"
-          w="100px"
-          type="submit"
-          disabled={isLoading}
-        >
-          Sign In
-        </Button>
-      </form>
-    </div>
+      <Button
+        mt="10px"
+        variant="primary"
+        _active={{ background: 'hoverBtn' }}
+        _hover={{ background: 'hoverBtn' }}
+        type="submit"
+        disabled={isLoading}
+      >
+        Sign In
+      </Button>
+    </form>
   );
 }
 

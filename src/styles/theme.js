@@ -1,37 +1,40 @@
 import { extendTheme } from '@chakra-ui/react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { ButtonStyles as Button } from 'styles/componentsStyles';
+import { InputStyles as Input } from 'styles/componentsStyles';
 
 export const theme = extendTheme({
-  colors: {
-    primary: '#FFDC83',
-    secondary: '#25502A',
-    hoverBtn: '#D0A54F',
-    light: '#F8FFF8',
-    dark: '#284775',
-    darkBrown: '#96711B',
-  },
   styles: {
     global: {
-      // 'html, body': {
-      //   color: 'gray.600',
-      //   lineHeight: 'tall',
-      // },
-      a: {
-        color: 'dark',
+      'html, body': {
+        height: '100vh',
       },
-      
     },
+  },
+  colors: {
+    primary: '#FFDC83',
+    darkGreen: '#25502A',
+    hoverBtn: '#D0A54F',
+    light: '#F8FFF8',
+    darkBlue: '#284775',
+    darkBrown: '#96711B',
+    green: '#19CA50',
+    violet: '#93ABE1',
+  },
+  components: {
+    Button,
+    Input,
   },
 });
 
-export const HeaderNav = styled.nav`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
-`;
+// export const HeaderNav = styled.nav`
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+//   padding-top: 30px;
+//   padding-bottom: 30px;
+// `;
 
 export const AuthNavWrapper = styled.div`
   display: flex;

@@ -45,11 +45,9 @@ function SignUpForm({ isLoading }) {
           <FormLabel color="light">Name:</FormLabel>
           <Input
             mt="10px"
-            variant="outline"
-            placeholder="Name"
-            bg="light"
-            size="md"
+            variant="primary"
             width="300px"
+            placeholder="Name"
             type="text"
             name="name"
             value={formData.name}
@@ -59,11 +57,9 @@ function SignUpForm({ isLoading }) {
           <FormLabel color="light">Email:</FormLabel>
           <Input
             mt="10px"
-            variant="outline"
-            placeholder="Email"
-            bg="light"
-            size="md"
+            variant="primary"
             width="300px"
+            placeholder="Email"
             type="text"
             name="email"
             value={formData.email}
@@ -74,9 +70,7 @@ function SignUpForm({ isLoading }) {
 
           <Input
             mt="10px"
-            variant="outline"
-            bg="light"
-            size="md"
+            variant="primary"
             width="300px"
             type={showPassword ? 'text' : 'password'}
             min={7}
@@ -89,13 +83,9 @@ function SignUpForm({ isLoading }) {
 
           <Button
             mt="10px"
-            variant="solid"
-            bg="primary"
+            variant="primary"
             _active={{ background: 'hoverBtn' }}
             _hover={{ background: 'hoverBtn' }}
-            color="dark"
-            size="md"
-            w="100px"
             type="submit"
             disabled={isLoading}
           >
