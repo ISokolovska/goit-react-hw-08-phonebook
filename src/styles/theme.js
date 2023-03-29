@@ -17,10 +17,11 @@ export const theme = extendTheme({
     darkGreen: '#25502A',
     hoverBtn: '#D0A54F',
     light: '#F8FFF8',
-    darkBlue: '#284775',
+    // darkBlue: '#284775',
     darkBrown: '#96711B',
     green: '#19CA50',
-    violet: '#93ABE1',
+    pink: '#FFD7D7',
+    yellow: '#FFEE58',
   },
   components: {
     Button,

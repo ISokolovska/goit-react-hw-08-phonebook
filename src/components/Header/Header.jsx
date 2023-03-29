@@ -11,7 +11,7 @@ function Header() {
   const user = useSelector(getUser);
   const isLoggedIn = user?.email ?? null;
   return (
-    <Box as="header" w="100%" bg="violet">
+    <Box as="header" w="100%" bg="pink">
       <Container
         display="flex"
         justifyContent="space-between"

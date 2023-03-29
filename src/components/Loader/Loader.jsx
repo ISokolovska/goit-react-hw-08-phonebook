@@ -1,6 +1,6 @@
 import React from 'react';
 import { RotatingLines } from 'react-loader-spinner';
-import { LoaderBox } from './Styled';
+import { LoaderBox } from './Loader.styled';
 
 function Loader() {
   return (
