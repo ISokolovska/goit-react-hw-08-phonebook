@@ -1,23 +1,30 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-08-phonebook/static/css/main.7acaea2f.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.fb303494.js",
-    "static/js/983.21b18a21.chunk.js": "/goit-react-hw-08-phonebook/static/js/983.21b18a21.chunk.js",
-    "static/js/788.dfb8cb6e.chunk.js": "/goit-react-hw-08-phonebook/static/js/788.dfb8cb6e.chunk.js",
-    "static/js/235.63d95326.chunk.js": "/goit-react-hw-08-phonebook/static/js/235.63d95326.chunk.js",
-    "static/js/182.f560cbfe.chunk.js": "/goit-react-hw-08-phonebook/static/js/182.f560cbfe.chunk.js",
-    "static/js/814.e97d4d05.chunk.js": "/goit-react-hw-08-phonebook/static/js/814.e97d4d05.chunk.js",
+    "main.css": "/goit-react-hw-08-phonebook/static/css/main.94aa0b3b.css",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.88288008.js",
+    "static/js/595.fce1796e.chunk.js": "/goit-react-hw-08-phonebook/static/js/595.fce1796e.chunk.js",
+    "static/js/788.46545bef.chunk.js": "/goit-react-hw-08-phonebook/static/js/788.46545bef.chunk.js",
+    "static/js/235.53a7dec6.chunk.js": "/goit-react-hw-08-phonebook/static/js/235.53a7dec6.chunk.js",
+    "static/js/182.a601aa6e.chunk.js": "/goit-react-hw-08-phonebook/static/js/182.a601aa6e.chunk.js",
+    "static/js/814.2dbe1f17.chunk.js": "/goit-react-hw-08-phonebook/static/js/814.2dbe1f17.chunk.js",
+    "static/media/phone_removebg.png": "/goit-react-hw-08-phonebook/static/media/phone_removebg.e844eeafb932485c0c2e.png",
+    "static/media/montserrat-all-400-normal.woff": "/goit-react-hw-08-phonebook/static/media/montserrat-all-400-normal.327fab0afc997a2d9b16.woff",
+    "static/media/montserrat-latin-400-normal.woff2": "/goit-react-hw-08-phonebook/static/media/montserrat-latin-400-normal.acb6629fe45c43ad5d8b.woff2",
+    "static/media/montserrat-latin-ext-400-normal.woff2": "/goit-react-hw-08-phonebook/static/media/montserrat-latin-ext-400-normal.0204ec08a4b574088f02.woff2",
+    "static/media/montserrat-cyrillic-ext-400-normal.woff2": "/goit-react-hw-08-phonebook/static/media/montserrat-cyrillic-ext-400-normal.bbf9e820a2563aac0d8b.woff2",
+    "static/media/montserrat-cyrillic-400-normal.woff2": "/goit-react-hw-08-phonebook/static/media/montserrat-cyrillic-400-normal.e5c5c19c23e370a342c8.woff2",
+    "static/media/montserrat-vietnamese-400-normal.woff2": "/goit-react-hw-08-phonebook/static/media/montserrat-vietnamese-400-normal.8f3f4c99eb0eeb5990f1.woff2",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
-    "main.7acaea2f.css.map": "/goit-react-hw-08-phonebook/static/css/main.7acaea2f.css.map",
-    "main.fb303494.js.map": "/goit-react-hw-08-phonebook/static/js/main.fb303494.js.map",
-    "983.21b18a21.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/983.21b18a21.chunk.js.map",
-    "788.dfb8cb6e.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/788.dfb8cb6e.chunk.js.map",
-    "235.63d95326.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/235.63d95326.chunk.js.map",
-    "182.f560cbfe.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/182.f560cbfe.chunk.js.map",
-    "814.e97d4d05.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/814.e97d4d05.chunk.js.map"
+    "main.94aa0b3b.css.map": "/goit-react-hw-08-phonebook/static/css/main.94aa0b3b.css.map",
+    "main.88288008.js.map": "/goit-react-hw-08-phonebook/static/js/main.88288008.js.map",
+    "595.fce1796e.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/595.fce1796e.chunk.js.map",
+    "788.46545bef.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/788.46545bef.chunk.js.map",
+    "235.53a7dec6.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/235.53a7dec6.chunk.js.map",
+    "182.a601aa6e.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/182.a601aa6e.chunk.js.map",
+    "814.2dbe1f17.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/814.2dbe1f17.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.fb303494.js"
+    "static/css/main.94aa0b3b.css",
+    "static/js/main.88288008.js"
   ]
 }
