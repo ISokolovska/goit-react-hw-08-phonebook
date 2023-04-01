@@ -7,7 +7,8 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { ChakraProvider } from '@chakra-ui/react';
 import { App } from 'components/App';
 import './index.css';
-import { theme } from 'styles/theme';
+import '@fontsource/montserrat';
+import theme from 'theme/theme';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -15,9 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <PersistGate loading={null} persistor={persistor}></PersistGate>
       <BrowserRouter basename="/goit-react-hw-08-phonebook">
         <ChakraProvider theme={theme}>
-          {/* <GlobalStyle> */}
           <App />
-          {/* </GlobalStyle> */}
         </ChakraProvider>
       </BrowserRouter>
     </Provider>

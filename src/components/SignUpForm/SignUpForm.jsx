@@ -11,6 +11,7 @@ function SignUpForm({ isLoading }) {
     password: '',
   });
   const [showPassword, setShowPassword] = useState(false);
+  console.log(setShowPassword);
   const dispatch = useDispatch();
 
   const handleChange = e => {
@@ -39,61 +40,54 @@ function SignUpForm({ isLoading }) {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} autoComplete="off">
-        <FormControl>
-          <FormLabel color="light">Name:</FormLabel>
-          <Input
-            mt="10px"
-            variant="primary"
-            width="300px"
-            placeholder="Name"
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          ></Input>
-          <FormLabel color="light">Email:</FormLabel>
-          <Input
-            mt="10px"
-            variant="primary"
-            width="300px"
-            placeholder="Email"
-            type="text"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          ></Input>
-          <FormLabel color="light">Password:</FormLabel>
-
-          <Input
-            mt="10px"
-            variant="primary"
-            width="300px"
-            type={showPassword ? 'text' : 'password'}
-            min={7}
-            placeholder="********"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-
-          <Button
-            mt="10px"
-            variant="primary"
-            _active={{ background: 'hoverBtn' }}
-            _hover={{ background: 'hoverBtn' }}
-            type="submit"
-            disabled={isLoading}
-          >
-            Sign Up
-          </Button>
-        </FormControl>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit} autoComplete="off">
+      <FormControl
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+      >
+        <FormLabel variant="formLabelText" fontSize="18px" mr="0px" mb="0px">
+          Name:
+        </FormLabel>
+        <Input
+          variant="formInput"
+          placeholder="Name"
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+        ></Input>
+        <FormLabel variant="formLabelText" mr="0px" mb="0px">
+          Email:
+        </FormLabel>
+        <Input
+          variant={'formInput'}
+          placeholder="Email"
+          type="text"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        ></Input>
+        <FormLabel variant="formLabelText" mr="0px" mb="0px">
+          Password:
+        </FormLabel>
+        <Input
+          variant="formInput"
+          type={showPassword ? 'text' : 'password'}
+          min={7}
+          placeholder="********"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+          required
+        />
+        <Button variant="formButton" type="submit" disabled={isLoading}>
+          Sign Up
+        </Button>
+      </FormControl>
+    </form>
   );
 }
 

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { SignUpForm } from 'components';
 import { useNavigate } from 'react-router';
+import { Box, Heading } from '@chakra-ui/react';
 
 function SignUpPage() {
   const { isLoading, error, user } = useSelector(state => state.userData);
@@ -14,11 +15,18 @@ function SignUpPage() {
   }, [user, navigate]);
 
   return (
-    <div>
-      <h1>Please, register ! </h1>
+    <Box
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Heading variant="formTitleText" mb="40px">
+        Please, register !
+      </Heading>
       {error.length > 0 && <p>Some error occured... With message {error}</p>}
       <SignUpForm isLoading={isLoading} />
-    </div>
+    </Box>
   );
 }
 export default SignUpPage;

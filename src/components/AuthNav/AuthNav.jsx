@@ -1,12 +1,26 @@
-// import { AuthNavWrapper, NavLinkAuth } from 'components/Styled';
-// import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
-import { AuthNavWrapper, NavLinkAuth } from 'styles/theme';
+import { Link, Box } from '@chakra-ui/react';
+import { NavLink } from 'react-router-dom';
 
 export const AuthNav = () => {
   return (
-    <AuthNavWrapper>
-      <NavLinkAuth to="/sign-up">Register</NavLinkAuth>
-      <NavLinkAuth to="/sign-in">Authorization</NavLinkAuth>
-    </AuthNavWrapper>
+    <Box
+      separator=" "
+      display={'flex'}
+      flexDirection={{ base: 'column', lg: 'row' }}
+      justifyContent={'space-around'}
+      alignItems={'center'}
+    >
+      <Link
+        variant={'headerLink'}
+        mr={{ lg: '40px' }}
+        as={NavLink}
+        to="/sign-up"
+      >
+        Register
+      </Link>
+      <Link variant={'headerLink'} as={NavLink} to="/sign-in">
+        Authorization
+      </Link>
+    </Box>
   );
 };

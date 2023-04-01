@@ -1,35 +1,36 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, Image, Text } from '@chakra-ui/react';
+import image from './../images/phone_removebg.png';
 
 function HomePage() {
   const { isLoading, error } = useSelector(state => state.userData);
 
   return (
-    <Flex h="100vh">
-      <Box backgroundColor="green">
+    <Flex
+      justifyContent="center"
+      alignItems="center"
+      maxWidth="1200px"
+      mx="auto"
+      h="100vh"
+    >
+      <Image
+        boxSize="100px"
+        objectFit="cover"
+        src={image}
+        alt="Phone"
+        w="450px"
+        h="450px"
+        _hover={{ transformStyle: 3 }}
+      />
+      <Box backgroundColor="darkBrown" w="50vw">
         {!isLoading && (
           <Text
-            pt="150px"
-            fontFamily="Roboto"
-            fontSize={{ base: '24px', md: '40px', lg: '56px' }}
-            lineHeight="1.36"
-            letterSpacing="0.06em"
-            textAlign="center"
-          >
-            Hi, I'm your phonebook !
-          </Text>
-        )}
-        {error.length > 0 && <p>Some error occured... With message {error}</p>}
-      </Box>
-      <Box backgroundColor="darkBrown">
-        {!isLoading && (
-          <Text
-            pt="150px"
-            fontFamily="Roboto"
-            fontSize={{ base: '24px', md: '40px', lg: '56px' }}
-            lineHeight="1.36"
-            letterSpacing="0.06em"
+            fontFamily="Montserrat"
+            fontSize={{ base: '20px', md: '26px', lg: '58px' }}
+            fontWeight={'800'}
+            lineHeight="1.3"
+            letterSpacing="0.03em"
             textAlign="center"
           >
             Hi, I'm your phonebook !

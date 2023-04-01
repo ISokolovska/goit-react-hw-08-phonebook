@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { signIn } from 'redux/users/operations';
-import { Button, FormLabel, Input } from '@chakra-ui/react';
+import { Button, FormControl, FormLabel, Input } from '@chakra-ui/react';
 function SignInForm({ isLoading }) {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
   const [showPassword, setShowPassword] = useState(false);
+  console.log(setShowPassword);
   const dispatch = useDispatch();
 
   const handleChange = e => {
@@ -36,43 +37,42 @@ function SignInForm({ isLoading }) {
 
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
-      <FormLabel color="light">Email:</FormLabel>
-      <Input
-        mt="10px"
-        variant="primary"
-        width="300px"
-        placeholder="Email"
-        type="text"
-        name="email"
-        value={formData.email}
-        onChange={handleChange}
-        required
-      ></Input>
-      <FormLabel color="light">Password:</FormLabel>
-
-      <Input
-        mt="10px"
-        variant="primary"
-        width="300px"
-        type={showPassword ? 'text' : 'password'}
-        min={7}
-        placeholder="********"
-        name="password"
-        value={formData.password}
-        onChange={handleChange}
-        required
-      ></Input>
-
-      <Button
-        mt="10px"
-        variant="primary"
-        _active={{ background: 'hoverBtn' }}
-        _hover={{ background: 'hoverBtn' }}
-        type="submit"
-        disabled={isLoading}
+      <FormControl
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
       >
-        Sign In
-      </Button>
+        <FormLabel variant="formLabelText" mr="0px" mb="0px">
+          Email:
+        </FormLabel>
+        <Input
+          variant="formInput"
+          placeholder="Email"
+          type="text"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        ></Input>
+        <FormLabel variant="formLabelText" mr="0px" mb="0px">
+          Password:
+        </FormLabel>
+
+        <Input
+          variant="formInput"
+          type={showPassword ? 'text' : 'password'}
+          min={7}
+          placeholder="********"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+          required
+        ></Input>
+
+        <Button variant="formButton" type="submit" disabled={isLoading}>
+          Sign In
+        </Button>
+      </FormControl>
     </form>
   );
 }

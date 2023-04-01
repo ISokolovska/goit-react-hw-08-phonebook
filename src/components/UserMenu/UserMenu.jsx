@@ -1,5 +1,5 @@
 import { Button } from '@chakra-ui/react';
-import { UserMenuItem, UserMenuWrapper, UserText } from 'styles/theme';
+import { UserMenuItem, UserMenuWrapper, UserText } from 'theme/theme';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser } from 'redux/selectors';
 import { logOut } from 'redux/users/operations';

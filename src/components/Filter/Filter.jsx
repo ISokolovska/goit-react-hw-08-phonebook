@@ -2,9 +2,9 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterContact } from 'redux/contacts/contactsSlice';
 import { getFilter } from 'redux/selectors';
-import { FilterText } from './Styled';
+// import { FilterText } from './Styled';
 import { FormControl, FormLabel, Input } from '@chakra-ui/react';
-import { Search2Icon } from '@chakra-ui/icons';
+// import { Search2Icon } from '@chakra-ui/icons';
 
 const Filter = () => {
   const filter = useSelector(getFilter);
