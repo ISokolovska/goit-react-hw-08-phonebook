@@ -19,9 +19,20 @@ const formLabelText = defineStyle({
   lineHeight: '1.5',
 });
 
+const userName = defineStyle({
+  p: '15px',
+  color: 'primary',
+  fontFamily: 'Montserrat',
+  fontStyle: 'normal',
+  fontWeight: '400',
+  fontSize: { base: '20px', md: '26px', lg: '16px' },
+  lineHeight: { base: '1.8', lg: '1.2' },
+});
+
 export const textTheme = defineStyleConfig({
   variants: {
     formTitleText,
     formLabelText,
+    userName,
   },
 });

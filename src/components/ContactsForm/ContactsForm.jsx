@@ -5,7 +5,6 @@ import { addContact } from 'redux/contacts/operations';
 import { getContacts } from 'redux/selectors';
 import PropTypes from 'prop-types';
 import { Button, FormControl, FormLabel, Input } from '@chakra-ui/react';
-import { AddIcon } from '@chakra-ui/icons';
 
 const ContactsForm = () => {
   const [name, setName] = useState('');
@@ -81,14 +80,8 @@ const ContactsForm = () => {
           title="number number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         />
-        <Button
-          mt="10px"
-          variant="primary"
-          _active={{ background: 'hoverBtn' }}
-          _hover={{ background: 'hoverBtn' }}
-          type="submit"
-        >
-          <AddIcon boxSize={6} />
+        <Button variant="formButton" type="submit">
+          Add
         </Button>
       </FormControl>
     </form>

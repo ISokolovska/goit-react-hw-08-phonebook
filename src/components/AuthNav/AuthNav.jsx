@@ -11,15 +11,16 @@ export const AuthNav = () => {
       alignItems={'center'}
     >
       <Link
-        variant={'headerLink'}
-        mr={{ lg: '40px' }}
         as={NavLink}
+        variant="authLink"
+        mr={{ lg: '40px' }}
+        mb={{ base: '30px', lg: '0' }}
         to="/sign-up"
       >
         Register
       </Link>
-      <Link variant={'headerLink'} as={NavLink} to="/sign-in">
-        Authorization
+      <Link as={NavLink} variant="authLink" to="/sign-in">
+        Login
       </Link>
     </Box>
   );

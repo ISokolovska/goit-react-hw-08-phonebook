@@ -21,7 +21,7 @@ function SignUpPage() {
       justifyContent="center"
       alignItems="center"
     >
-      <Heading variant="formTitleText" mb="40px">
+      <Heading variant="formTitleText" mb="30px">
         Please, register !
       </Heading>
       {error.length > 0 && <p>Some error occured... With message {error}</p>}

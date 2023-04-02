@@ -1,7 +1,4 @@
 import { extendTheme } from '@chakra-ui/react';
-import styled from 'styled-components';
-// import { ButtonStyles as Button } from 'theme/componentsStyles';
-// import { InputStyles as Input } from 'theme/componentsStyles';
 import { linkTheme } from './components/links.extend';
 import { textTheme } from './components/texts.extend';
 import { inputTheme } from './components/input.extends';
@@ -36,11 +33,7 @@ export const breakpoints = {
 //     },
 //   },
 // },
-// Input: inputTheme,
-// Textarea: textareaTheme,
-// Button: buttonTheme,
-// IconButton: buttonTheme,
-// Heading: headingTheme,
+
 // };
 
 const theme = extendTheme({
@@ -54,6 +47,7 @@ const theme = extendTheme({
     grey: '#BDBDBD',
     red: '#FF0000',
     yellow: '#FFBF00',
+    seeblue: '#66C3B1',
     accentOrange: '#FF6101',
   },
   components: {
@@ -66,26 +60,3 @@ const theme = extendTheme({
 });
 
 export default theme;
-
-export const UserMenuWrapper = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-`;
-
-export const UserMenuItem = styled.li`
-  display: flex;
-  justify-content: baseline;
-  align-items: center;
-  &:not(:last-child) {
-    margin-right: 25px;
-  }
-`;
-
-export const UserText = styled.p`
-  margin-top: 0;
-  margin-bottom: 0;
-`;
