@@ -19,7 +19,7 @@ function Header() {
         alignItems="center"
         maxWidth="1200px"
         mx="auto"
-        p="40px 16px"
+        p="30px 16px"
       >
         <Navigation />
         {!isLoggedIn ? <AuthNav /> : <UserMenu />}

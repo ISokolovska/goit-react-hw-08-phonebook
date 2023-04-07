@@ -19,29 +19,31 @@ const ContactsList = () => {
   const filteredContacts = onFilterContacts();
 
   return (
-    <Box display="flex" flexDirection="column" justifyContent="center">
+    <Box
+    // display="flex" flexDirection="column" justifyContent="center"
+    >
       <List
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        className="contacts-list"
+      // display="flex"
+      // flexDirection="column"
+      // alignItems="center"
+      // className="contacts-list"
       >
         {filteredContacts.map(contact => {
           return (
             <ListItem
-              display="flex;"
-              justifyContent="center"
-              alignItems="center"
-              mb="10px"
+              // display="flex;"
+              // justifyContent="center"
+              // alignItems="center"
+              // mb="10px"
               key={contact.id}
             >
-              <Text fontSize="20px" color="light">
+              <Text variant="formLabelText">
                 {contact.name}: {contact.number}
               </Text>
               <Button
-                variant="primary"
-                _active={{ background: 'hoverBtn' }}
-                _hover={{ background: 'hoverBtn' }}
+                w="40px"
+                h="40px"
+                borderRadius="50px"
                 type="submit"
                 onClick={() => dispatch(deleteContact(contact.id))}
               >

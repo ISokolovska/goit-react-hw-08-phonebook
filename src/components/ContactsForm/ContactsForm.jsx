@@ -45,15 +45,17 @@ const ContactsForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <FormControl>
-        <FormLabel color="light">Name</FormLabel>
+      <FormControl
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+      >
+        <FormLabel variant="formLabelText" mr="0px" mb="0px" color="champagne">
+          Name
+        </FormLabel>
         <Input
-          mt="10px"
-          variant="outline"
+          variant="formInput"
           placeholder="Name"
-          bg="light"
-          size="md"
-          width="300px"
           type="text"
           name="name"
           onChange={handleChange}
@@ -62,16 +64,12 @@ const ContactsForm = () => {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
-        <FormLabel display="flex" flexDirection="column" color="light">
+        <FormLabel variant="formLabelText" mr="0px" mb="0px" color="champagne">
           Number
         </FormLabel>
         <Input
-          mt="10px"
-          variant="outline"
+          variant="formInput"
           placeholder="Number"
-          bg="light"
-          size="md"
-          width="300px"
           type="tel"
           name="number"
           value={number}

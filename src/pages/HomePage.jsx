@@ -11,8 +11,9 @@ function HomePage() {
       justifyContent="center"
       alignItems="center"
       maxWidth="1200px"
-      mx="auto"
-      h="100vh"
+      m="auto"
+      p="60px 30px"
+      bg="champagne"
     >
       <Image
         boxSize="100px"
@@ -23,7 +24,7 @@ function HomePage() {
         h="450px"
         _hover={{ transformStyle: 3 }}
       />
-      <Box backgroundColor="darkBrown" w="50vw">
+      <Box w="50vw">
         {!isLoading && (
           <Text
             fontFamily="Montserrat"

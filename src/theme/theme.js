@@ -42,13 +42,15 @@ const theme = extendTheme({
     body: `'Montserrat', sans-serif`,
   },
   colors: {
-    primary: '#111518',
+    primary: '#000000',
     white: '#FFFFFF',
+    champagne: '#EBE8BF',
     grey: '#BDBDBD',
     red: '#FF0000',
     yellow: '#FFBF00',
     seeblue: '#66C3B1',
     accentOrange: '#FF6101',
+    darkBlue: '#3B4255',
   },
   components: {
     Text: textTheme,

@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { SignInForm } from 'components';
-import { Box, Heading } from '@chakra-ui/react';
+import { Box, Flex, Heading } from '@chakra-ui/react';
 
 function SignInPage() {
   const { isLoading, error, user } = useSelector(state => state.userData);
@@ -19,14 +19,32 @@ function SignInPage() {
     <Box
       display="flex"
       flexDirection="column"
-      justifyContent="center"
+      // justifyContent="center"
       alignItems="center"
+      m="auto"
+      bg="champagne"
+      maxWidth="1200px"
+      h="100vh"
+      p="60px 30px "
     >
-      <Heading variant="formTitleText" mb="40px">
-        Please, log in !
-      </Heading>
-      {error.length > 0 && <p>Some error occured... With message {error}</p>}
-      <SignInForm isLoading={isLoading} />
+      <Flex
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+        w="400px"
+        p="30px"
+        m="40px"
+        border="2px solid "
+        borderColor="yellow"
+        borderRadius="20px"
+        bg="white"
+      >
+        <Heading variant="formTitleText" mb="30px">
+          Please, log in !
+        </Heading>
+        {error.length > 0 && <p>Some error occured... With message {error}</p>}
+        <SignInForm isLoading={isLoading} />
+      </Flex>
     </Box>
   );
 }

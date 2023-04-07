@@ -12,12 +12,7 @@ export const UserMenu = () => {
   };
 
   return (
-    <Box
-      display={'flex'}
-      justifyContent={'space-around'}
-      alignItems={'center'}
-      listStyle={'none'}
-    >
+    <Box display={'flex'} justifyContent={'space-around'} alignItems={'center'}>
       <Flex justifyContent={'baseline'} alignItems={'center'}>
         <img
           src="https://img.icons8.com/laces/64/null/user.png"

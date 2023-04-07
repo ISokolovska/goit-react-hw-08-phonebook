@@ -44,12 +44,37 @@ function ContactsPage() {
   }, [dispatch]);
 
   return (
-    <Box h="100vh" bg="darkBlue" w="100%" maxW="1200px" m="0 auto">
+    <Box
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+      m="0 auto"
+      bg="champagne"
+      maxWidth="1200px"
+      h="100vh"
+      p="60px 30px "
+    >
       {isOpen && (
         <Box onClick={handleBackDropClick}>
-          <Box>
+          <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            bg="darkBlue"
+            w="400px"
+            p="30px"
+            m="auto"
+            border="1px solid darkBlue"
+            borderRadius="20px"
+          >
             <Button
               type="button"
+              w="40px"
+              h="40px"
+              mb="20px"
+              borderRadius="50px"
               onClick={() => {
                 // reset();
                 setIsOpen(!isOpen);
@@ -57,6 +82,7 @@ function ContactsPage() {
             >
               <CloseIcon />
             </Button>
+
             <ContactsForm />
           </Box>
         </Box>
@@ -64,6 +90,9 @@ function ContactsPage() {
       {!isOpen && (
         <Button
           type="click"
+          w="40px"
+          h="40px"
+          borderRadius="50px"
           onClick={() => {
             // dispatch(cleanError());
             setIsOpen(!isOpen);
@@ -73,8 +102,12 @@ function ContactsPage() {
         </Button>
       )}
       {isLoading && !error && <b>Request in progress...</b>}
-      <Filter />
-      <ContactsList />
+      {!isOpen && (
+        <>
+          <Filter />
+          <ContactsList />
+        </>
+      )}
     </Box>
   );
 }

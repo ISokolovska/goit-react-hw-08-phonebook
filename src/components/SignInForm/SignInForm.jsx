@@ -60,6 +60,7 @@ function SignInForm({ isLoading }) {
 
         <Input
           variant="formInput"
+          mb="0"
           type={showPassword ? 'text' : 'password'}
           min={7}
           placeholder="********"
