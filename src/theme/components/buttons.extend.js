@@ -1,8 +1,39 @@
 import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
 
 const formButton = defineStyle({
-  mt: '30px',
+  mt: '40px',
   width: '300px',
+  height: '50px',
+  backgroundColor: 'yellow',
+  borderRadius: '20px',
+  border: '1px solid',
+  borderColor: 'yellow',
+  color: 'white',
+  fontFamily: 'Montserrat',
+  fontWeight: '400',
+  fontSize: { base: '14px', md: '16px', lg: '18px' },
+  lineHeight: '27px',
+  textAlign: 'center',
+  letterSpacing: '0.1em',
+  textTransform: 'uppercase',
+  _focus: {
+    backgroundColor: 'white',
+    color: 'yellow',
+    border: '1px solid',
+    borderColor: 'yellow',
+    boxShadow: '0 0 1px 1px #D3D3D333',
+  },
+  _hover: {
+    backgroundColor: 'white',
+    color: 'yellow',
+    border: '1px solid ',
+    borderColor: 'yellow',
+    boxShadow: '0 0 1px 1px #D3D3D333',
+  },
+});
+
+const addButton = defineStyle({
+  width: '100px',
   height: '50px',
   backgroundColor: 'yellow',
   borderRadius: '20px',
@@ -37,7 +68,7 @@ const logOutButton = defineStyle({
   justifyContent: 'center',
   alignItems: 'center',
   p: '25px',
-  height: '50px',
+  height: { base: '33px', lg: '50px' },
   backgroundColor: 'seeblue',
   borderRadius: '20px',
   border: '1px solid',
@@ -46,7 +77,7 @@ const logOutButton = defineStyle({
   fontFamily: 'Montserrat',
   fontStyle: 'normal',
   fontWeight: '400',
-  fontSize: { base: '20px', md: '26px', lg: '16px' },
+  fontSize: { base: '14px', md: '16px', lg: '18px' },
   lineHeight: { base: '1.8', lg: '1.2' },
   textAlign: 'center',
   letterSpacing: '0.1em',
@@ -72,6 +103,7 @@ const logOutButton = defineStyle({
 export const buttonTheme = defineStyleConfig({
   variants: {
     formButton,
+    addButton,
     logOutButton,
   },
 });

@@ -47,6 +47,7 @@ function SignInForm({ isLoading }) {
         </FormLabel>
         <Input
           variant="formInput"
+          mb="20px"
           placeholder="Email"
           type="text"
           name="email"

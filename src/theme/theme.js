@@ -1,7 +1,7 @@
 import { extendTheme } from '@chakra-ui/react';
 import { linkTheme } from './components/links.extend';
 import { textTheme } from './components/texts.extend';
-import { inputTheme } from './components/input.extends';
+import { inputTheme } from './components/inputs.extend';
 import { buttonTheme } from './components/buttons.extend';
 
 export const breakpoints = {

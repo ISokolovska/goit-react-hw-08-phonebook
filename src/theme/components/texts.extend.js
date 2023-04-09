@@ -15,7 +15,7 @@ const formLabelText = defineStyle({
   fontFamily: 'Montserrat',
   fontStyle: 'normal',
   fontWeight: '400',
-  fontSize: '18px',
+  fontSize: { base: '14px', md: '16px', lg: '18px' },
   lineHeight: '1.5',
 });
 

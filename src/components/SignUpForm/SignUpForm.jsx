@@ -51,6 +51,7 @@ function SignUpForm({ isLoading }) {
         </FormLabel>
         <Input
           variant="formInput"
+          mb="20px"
           placeholder="Name"
           type="text"
           name="name"
@@ -62,7 +63,8 @@ function SignUpForm({ isLoading }) {
           Email:
         </FormLabel>
         <Input
-          variant={'formInput'}
+          variant="formInput"
+          mb="20px"
           placeholder="Email"
           type="text"
           name="email"

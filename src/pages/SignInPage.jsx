@@ -19,7 +19,7 @@ function SignInPage() {
     <Box
       display="flex"
       flexDirection="column"
-      // justifyContent="center"
+      justifyContent="center"
       alignItems="center"
       m="auto"
       bg="champagne"
@@ -31,9 +31,8 @@ function SignInPage() {
         flexDirection="column"
         justifyContent="center"
         alignItems="center"
-        w="400px"
+        w={{ base: '100%', md: '400px' }}
         p="30px"
-        m="40px"
         border="2px solid "
         borderColor="yellow"
         borderRadius="20px"

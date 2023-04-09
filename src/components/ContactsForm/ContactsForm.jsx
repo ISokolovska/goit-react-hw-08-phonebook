@@ -55,6 +55,7 @@ const ContactsForm = () => {
         </FormLabel>
         <Input
           variant="formInput"
+          mb="20px"
           placeholder="Name"
           type="text"
           name="name"

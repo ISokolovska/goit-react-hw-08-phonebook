@@ -8,9 +8,11 @@ function HomePage() {
 
   return (
     <Flex
+      flexDirection="row"
       justifyContent="center"
       alignItems="center"
-      maxWidth="1200px"
+      maxW="1200px"
+      h="100vh"
       m="auto"
       p="60px 30px"
       bg="champagne"
@@ -20,8 +22,8 @@ function HomePage() {
         objectFit="cover"
         src={image}
         alt="Phone"
-        w="450px"
-        h="450px"
+        w={{ base: '250px', lg: '450px' }}
+        h={{ base: '250px', lg: '450px' }}
         _hover={{ transformStyle: 3 }}
       />
       <Box w="50vw">

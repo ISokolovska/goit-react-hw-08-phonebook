@@ -16,11 +16,22 @@ const Filter = () => {
   };
 
   return (
-    <FormControl display="flex" flexDirection="column" justifyContent="center">
-      <FormLabel>Find contacts by name </FormLabel>
+    <FormControl
+      display="flex"
+      flexDirection="column"
+      justifyContent="flex-start"
+      mr="30px"
+    >
+      <FormLabel variant="formLabelText" mr="0px" mb="5px">
+        Find contacts by name
+      </FormLabel>
       <Input
-        variant="primary"
-        width="300px"
+        variant="formInput"
+        w="370px"
+        h="50px"
+        m="0"
+        border="2px solid"
+        borderColor="yellow"
         placeholder="Find contacts by name"
         type="text"
         id="filter"

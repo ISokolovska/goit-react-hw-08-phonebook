@@ -47,7 +47,6 @@ function ContactsPage() {
     <Box
       display="flex"
       flexDirection="column"
-      justifyContent="center"
       alignItems="center"
       m="0 auto"
       bg="champagne"
@@ -56,55 +55,66 @@ function ContactsPage() {
       p="60px 30px "
     >
       {isOpen && (
-        <Box onClick={handleBackDropClick}>
+        <Box
+          onClick={handleBackDropClick}
+          position="fixed"
+          top="0"
+          left="0"
+          width="100vw"
+          height="100vh"
+          background="rgba(0, 0, 0, 0.25)"
+        >
           <Box
             display="flex"
             flexDirection="column"
             justifyContent="center"
             alignItems="center"
+            position="absolute"
+            top="50%"
+            left="50%"
+            transform="translate(-50%, -50%)"
             bg="darkBlue"
             w="400px"
-            p="30px"
+            p="15px 30px 30px"
             m="auto"
             border="1px solid darkBlue"
             borderRadius="20px"
           >
             <Button
               type="button"
-              w="40px"
-              h="40px"
+              size="xs"
+              p="0"
               mb="20px"
+              left="48%"
               borderRadius="50px"
               onClick={() => {
                 // reset();
                 setIsOpen(!isOpen);
               }}
             >
-              <CloseIcon />
+              <CloseIcon boxSize="10px" />
             </Button>
-
             <ContactsForm />
           </Box>
         </Box>
       )}
-      {!isOpen && (
-        <Button
-          type="click"
-          w="40px"
-          h="40px"
-          borderRadius="50px"
-          onClick={() => {
-            // dispatch(cleanError());
-            setIsOpen(!isOpen);
-          }}
-        >
-          <AddIcon boxSize={6} />
-        </Button>
-      )}
+
       {isLoading && !error && <b>Request in progress...</b>}
       {!isOpen && (
         <>
-          <Filter />
+          <Box display="flex" flexDir="row-reverse" alignItems="center">
+            <Button
+              type="click"
+              variant="addButton"
+              onClick={() => {
+                // dispatch(cleanError());
+                setIsOpen(!isOpen);
+              }}
+            >
+              <AddIcon boxSize={6} />
+            </Button>
+            <Filter />
+          </Box>
           <ContactsList />
         </>
       )}

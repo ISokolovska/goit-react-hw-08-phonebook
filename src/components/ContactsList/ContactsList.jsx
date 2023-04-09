@@ -23,23 +23,33 @@ const ContactsList = () => {
     // display="flex" flexDirection="column" justifyContent="center"
     >
       <List
-      // display="flex"
-      // flexDirection="column"
-      // alignItems="center"
-      // className="contacts-list"
+        mt="40px"
+        // display="flex"
+        // flexDirection="column"
+        // alignItems="center"
+        // className="contacts-list"
       >
         {filteredContacts.map(contact => {
           return (
             <ListItem
-              // display="flex;"
-              // justifyContent="center"
-              // alignItems="center"
-              // mb="10px"
+              display="flex"
+              flexDirection="row"
+              justifyContent="space-between"
+              alignItems="center"
+              w="500px"
+              p="5px 10px"
+              mb="15px"
+              border="2px solid"
+              borderColor="yellow"
               key={contact.id}
             >
-              <Text variant="formLabelText">
-                {contact.name}: {contact.number}
+              <Text variant="formLabelText" w="150px">
+                {contact.name}:
               </Text>
+              <Text variant="formLabelText" w="150px">
+                {contact.number}
+              </Text>
+
               <Button
                 w="40px"
                 h="40px"
@@ -47,7 +57,7 @@ const ContactsList = () => {
                 type="submit"
                 onClick={() => dispatch(deleteContact(contact.id))}
               >
-                <DeleteIcon boxSize={6} />
+                <DeleteIcon boxSize={6} color="#FF0000" />
               </Button>
             </ListItem>
           );

@@ -4,17 +4,15 @@ import { NavLink } from 'react-router-dom';
 export const AuthNav = () => {
   return (
     <Box
-      separator=" "
       display={'flex'}
-      flexDirection={{ base: 'column', lg: 'row' }}
+      flexDirection="row"
       justifyContent={'space-around'}
       alignItems={'center'}
     >
       <Link
         as={NavLink}
         variant="authLink"
-        mr={{ lg: '40px' }}
-        mb={{ base: '30px', lg: '0' }}
+        mr={{ base: '20px', lg: '40px' }}
         to="/sign-up"
       >
         Register

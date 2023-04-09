@@ -1,14 +1,14 @@
 import { Link, Box } from '@chakra-ui/react';
 import { NavLink } from 'react-router-dom';
 
-export const Navigation = () => {
+export const NavDesk = ({ ...props }) => {
   return (
     <Box
-      separator=" "
-      display={'flex'}
-      flexDirection={{ base: 'column', lg: 'row' }}
-      justifyContent={'space-around'}
-      alignItems={'center'}
+      display="flex"
+      flexDirection="row"
+      justifyContent="space-around"
+      alignItems="center"
+      {...props}
     >
       <Link
         // _selected={{ color: 'white', bg: 'dark' }}
@@ -21,7 +21,7 @@ export const Navigation = () => {
       </Link>
       <Link
         // _selected={{ color: 'white', bg: 'dark' }}
-        variant={'headerLink'}
+        variant="headerLink"
         as={NavLink}
         to="/contacts"
       >
