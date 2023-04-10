@@ -4,7 +4,7 @@ import { textTheme } from './components/texts.extend';
 import { inputTheme } from './components/inputs.extend';
 import { buttonTheme } from './components/buttons.extend';
 
-export const breakpoints = {
+const breakpoints = {
   sm: '320px',
   md: '480px',
   lg: '768px',
@@ -37,6 +37,7 @@ export const breakpoints = {
 // };
 
 const theme = extendTheme({
+  breakpoints,
   fonts: {
     heading: `'Montserrat', sans-serif`,
     body: `'Montserrat', sans-serif`,

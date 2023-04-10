@@ -1,20 +1,15 @@
 import { Link, Flex, Button } from '@chakra-ui/react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-export const NavMob = ({ ...props }) => {
+export const NavTab = ({ ...props }) => {
   const [display, changeDisplay] = useState('none');
-  const location = useLocation().pathname;
-
-  useEffect(() => {
-    changeDisplay('none');
-  }, [location]);
 
   return (
     <Flex {...props}>
-      <Flex top="1rem" right="1.5rem" flexDirection="column">
-        <Button display="inline" onClick={() => changeDisplay('flex')}>
+      <Flex top="1rem" right="1.5rem" align="center">
+        <Button onClick={() => changeDisplay('flex')}>
           <HamburgerIcon boxSize="30px" />
         </Button>
       </Flex>

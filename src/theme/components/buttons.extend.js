@@ -2,7 +2,7 @@ import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
 
 const formButton = defineStyle({
   mt: '40px',
-  width: '300px',
+  width: { base: '100%', md: '300px' },
   height: '50px',
   backgroundColor: 'yellow',
   borderRadius: '20px',
@@ -67,7 +67,7 @@ const logOutButton = defineStyle({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  p: '25px',
+  p: { base: '15px', md: '20px', lg: '25px' },
   height: { base: '33px', lg: '50px' },
   backgroundColor: 'seeblue',
   borderRadius: '20px',

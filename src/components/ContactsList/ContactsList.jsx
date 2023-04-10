@@ -36,17 +36,17 @@ const ContactsList = () => {
               flexDirection="row"
               justifyContent="space-between"
               alignItems="center"
-              w="500px"
+              w={{ base: '100%', lg: '500px' }}
               p="5px 10px"
               mb="15px"
               border="2px solid"
               borderColor="yellow"
               key={contact.id}
             >
-              <Text variant="formLabelText" w="150px">
+              <Text variant="formLabelText" w={{ base: '110px', md: '150px' }}>
                 {contact.name}:
               </Text>
-              <Text variant="formLabelText" w="150px">
+              <Text variant="formLabelText" w={{ base: '110px', md: '150px' }}>
                 {contact.number}
               </Text>
 

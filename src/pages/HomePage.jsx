@@ -8,10 +8,11 @@ function HomePage() {
 
   return (
     <Flex
-      flexDirection="row"
+      flexDirection={{ base: 'column', xl: 'row' }}
+      // justifyContent={{ base: 'flex-start', lg: 'center' }}
       justifyContent="center"
       alignItems="center"
-      maxW="1200px"
+      maxW="1280px"
       h="100vh"
       m="auto"
       p="60px 30px"
@@ -22,16 +23,16 @@ function HomePage() {
         objectFit="cover"
         src={image}
         alt="Phone"
-        w={{ base: '250px', lg: '450px' }}
-        h={{ base: '250px', lg: '450px' }}
-        _hover={{ transformStyle: 3 }}
+        w={{ base: '350px', lg: '450px' }}
+        h={{ base: '350px', lg: '450px' }}
+        mb={{ base: '50px' }}
       />
       <Box w="50vw">
         {!isLoading && (
           <Text
             fontFamily="Montserrat"
-            fontSize={{ base: '20px', md: '26px', lg: '58px' }}
-            fontWeight={'800'}
+            fontSize={{ base: '26px', md: '34px', lg: '54px' }}
+            fontWeight={{ base: '700', lg: '800' }}
             lineHeight="1.3"
             letterSpacing="0.03em"
             textAlign="center"

@@ -25,7 +25,7 @@ const userName = defineStyle({
   fontFamily: 'Montserrat',
   fontStyle: 'normal',
   fontWeight: '400',
-  fontSize: { base: '20px', md: '26px', lg: '16px' },
+  fontSize: { base: '14px', md: '16px', lg: '18px' },
   lineHeight: { base: '1.8', lg: '1.2' },
 });
 

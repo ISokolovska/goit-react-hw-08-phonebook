@@ -75,8 +75,9 @@ const ContactsForm = () => {
           name="number"
           value={number}
           onChange={handleChange}
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="number number must be digits and can contain spaces, dashes, parentheses and can start with +"
+          pattern="/^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/"
+          maxLength="13"
+          title="/^\+380\d{9}$/u, 'Please, use only  +  and numbers'"
           required
         />
         <Button variant="formButton" type="submit">

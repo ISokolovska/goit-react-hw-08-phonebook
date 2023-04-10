@@ -27,7 +27,7 @@ const Filter = () => {
       </FormLabel>
       <Input
         variant="formInput"
-        w="370px"
+        w={{ base: '100%', lg: '370px' }}
         h="50px"
         m="0"
         border="2px solid"

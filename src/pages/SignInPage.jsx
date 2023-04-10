@@ -23,7 +23,7 @@ function SignInPage() {
       alignItems="center"
       m="auto"
       bg="champagne"
-      maxWidth="1200px"
+      maxWidth="1280px"
       h="100vh"
       p="60px 30px "
     >

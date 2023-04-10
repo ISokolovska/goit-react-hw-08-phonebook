@@ -50,7 +50,7 @@ function ContactsPage() {
       alignItems="center"
       m="0 auto"
       bg="champagne"
-      maxWidth="1200px"
+      maxWidth="1280px"
       h="100vh"
       p="60px 30px "
     >
@@ -74,7 +74,7 @@ function ContactsPage() {
             left="50%"
             transform="translate(-50%, -50%)"
             bg="darkBlue"
-            w="400px"
+            w={{ base: '100%', md: '400px' }}
             p="15px 30px 30px"
             m="auto"
             border="1px solid darkBlue"
