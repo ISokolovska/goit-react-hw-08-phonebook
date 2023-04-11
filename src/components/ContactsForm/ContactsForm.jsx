@@ -75,7 +75,7 @@ const ContactsForm = () => {
           name="number"
           value={number}
           onChange={handleChange}
-          pattern="/^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/"
+          pattern="^((8|\+3)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
           maxLength="13"
           title="/^\+380\d{9}$/u, 'Please, use only  +  and numbers'"
           required
