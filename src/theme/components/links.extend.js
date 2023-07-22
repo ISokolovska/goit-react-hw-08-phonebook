@@ -9,6 +9,7 @@ const headerLink = defineStyle({
   fontSize: '18px',
   lineHeight: { base: '1.8', lg: '1.2' },
   textTransform: 'uppercase',
+  border: '1px solid transparent',
   _focus: {
     textDecoration: 'none',
     color: 'red',
@@ -44,6 +45,7 @@ const authLink = defineStyle({
   lineHeight: { base: '1.8', lg: '1.2' },
   textAlign: 'center',
   letterSpacing: '0.1em',
+  border: '1px solid transparent',
 
   _focus: {
     textDecoration: 'none',
